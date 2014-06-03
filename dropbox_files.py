@@ -22,7 +22,7 @@ class DropboxFiles():
 
         if filepath:
             with open(filepath) as token_file:
-                token = token_file.read()
+                token = token_file.read().strip()
 
         self.client = DropboxClient(token)
 
