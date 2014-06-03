@@ -21,9 +21,9 @@ Usage Sample
 
     # Initialization
     from dropbox_files import DropboxFiles
-    dropbox = DropboxFiles('/path/to/dropbox_token')
+    dropbox = DropboxFiles('/path/to/access_token')
 
-    # Download from Dropbox app's root path 'somefile.txt' into current directory
+    # Download 'somefile.txt' from Dropbox app's root path into current directory
     dropbox.download('somefile.txt')
 
     # Upload 'somefile.txt' to Dropbox app's path: '/dropbox_path/somefile.txt'
