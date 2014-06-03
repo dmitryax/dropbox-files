@@ -6,6 +6,7 @@ setup(
     version=open('VERSION').read().strip(),
     description='Simple Dropbox wrapper for downloading/uploading files',
     long_description=open('README.rst').read(),
+    url='https://github.com/hmbg/dropbox-files',
 
     author='Dmitry Anoshin',
     author_email='anoshindx@gmail.com',
