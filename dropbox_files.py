@@ -40,15 +40,15 @@ class DropboxFiles():
         if os.path.isdir(local_filepath):
             local_filepath = os.path.join(local_filepath, filename)
 
-        with open(local_filepath, 'wb') as local_file:
-            try:
-                with self.client.get_file(dropbox_filepath) as dropbox_file:
-                    local_file.write(dropbox_file.read())
-            except ErrorResponse as e:
-                if e.status == 404:
-                    return None
-                else:
-                    raise
+        try:
+            with self.client.get_file(dropbox_filepath) as dropbox_file, \
+                 open(local_filepath, 'wb') as local_file:
+                local_file.write(dropbox_file.read())
+        except ErrorResponse as e:
+            if e.status == 404:
+                return None
+            else:
+                raise
 
         return local_filepath
 
