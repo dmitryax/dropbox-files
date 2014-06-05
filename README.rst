@@ -11,7 +11,7 @@ Installation
 
 ::
 
-    $ pip install git+https://github.com/hmbg/dropbox-files
+    $ pip install -e git+https://github.com/hmbg/dropbox-files#egg=dropbox_files
 
 
 Usage Sample
