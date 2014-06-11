@@ -37,7 +37,7 @@ class DropboxFiles():
         filename = posixpath.basename(dropbox_filepath)
         if not local_filepath:
             local_filepath = filename
-        if os.path.isdir(local_filepath):
+        elif os.path.isdir(local_filepath):
             local_filepath = os.path.join(local_filepath, filename)
 
         try:
@@ -57,7 +57,7 @@ class DropboxFiles():
         filename = os.path.basename(local_filepath)
         if not dropbox_filepath:
             dropbox_filepath = posixpath.join('/', filename)
-        if dropbox_filepath.endswith('/'): # dropbox_filepath is a dir
+        elif dropbox_filepath.endswith('/'): # dropbox_filepath is a dir
             dropbox_filepath = posixpath.join(dropbox_filepath, filename)
 
         with open(local_filepath, 'rb') as local_file:
